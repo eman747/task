@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
+import FastImage from 'react-native-fast-image';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import palette from '../theme/palette';
@@ -15,7 +16,7 @@ import {spacing} from '../theme/spacing';
 function ProductComponent(props) {
   return (
     <TouchableOpacity style={styles.container} onPress={props.onPress}>
-      <Image source={{uri: props.item.images[0]}} style={styles.image} />
+      <FastImage source={{uri: props.item.images[0]}} style={styles.image} />
       <View style={{marginTop: spacing.mini}}>
         <Text style={styles.title}>{props.item.title}</Text>
       </View>

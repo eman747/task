@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, Text, View, SafeAreaView} from 'react-native';
 
 import {useDispatch} from 'react-redux';
+import FastImage from 'react-native-fast-image';
 import styles from './Style';
 import Header from '../../../components/Header';
 import mainStyles from '../Home/Styles';
@@ -21,7 +22,7 @@ function ProductDetail(props) {
     <SafeAreaView style={mainStyles.container}>
       <Header centeredTitle="Product Detail" />
       <View style={styles.body}>
-        <Image source={{uri: item.images[0]}} style={styles.image} />
+        <FastImage source={{uri: item.images[0]}} style={styles.image} />
         <View style={{marginTop: spacing.small}}>
           <Text style={styles.titleText}>{item.title}</Text>
         </View>

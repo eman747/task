@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
-import {saveDataToStorage} from '../services/storage/storage';
+import {removeData, saveDataToStorage} from '../services/storage/storage';
 
 const initialState = {
   token: null,
@@ -25,6 +25,10 @@ export const authSlice = createSlice({
     login: (state, action) => {
       state.token = action.payload;
     },
+    logout: () => {
+      removeData();
+      return initialState;
+    },
   },
   extraReducers: builder => {
     builder.addCase(fetchContent.fulfilled, (state, action) => {
@@ -35,6 +39,6 @@ export const authSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const {login} = authSlice.actions;
+export const {login, logout} = authSlice.actions;
 
 export default authSlice.reducer;

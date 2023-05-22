@@ -10,3 +10,7 @@ export const saveDataToStorage = token => {
     }
   });
 };
+
+export const removeData = () => {
+  AsyncStorage.removeItem('token');
+};

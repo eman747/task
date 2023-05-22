@@ -13,9 +13,17 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import palette from '../theme/palette';
 import {spacing} from '../theme/spacing';
+import {useDispatch} from 'react-redux';
+import {logout} from '../redux/authSlice';
 
 function Header(props) {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  function onLogout() {
+    dispatch(logout());
+  }
+
   return (
     <View style={styles.container}>
       {props.title ? (
@@ -34,7 +42,7 @@ function Header(props) {
       )}
       <View style={styles.row}>
         {props.title && (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onLogout}>
             <MaterialIcons name="logout" size={20} color={palette.black} />
           </TouchableOpacity>
         )}
