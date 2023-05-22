@@ -17,6 +17,13 @@ export default styles = StyleSheet.create({
     fontWeight: 'bold',
     color: palette.black,
   },
+  errorText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: palette.red,
+    marginLeft: spacing.micro,
+    marginTop: spacing.micro,
+  },
   loading: {
     flex: 1,
     justifyContent: 'center',

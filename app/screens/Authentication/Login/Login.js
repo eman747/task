@@ -14,10 +14,16 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   function handleLogin() {
     setLoading(true);
-    dispatch(fetchContent({username, password}));
+    dispatch(fetchContent({username, password})).then(res => {
+      if (res.error) {
+        setError('Invalid username or password!');
+        setLoading(false);
+      }
+    });
   }
 
   if (loading) {
@@ -45,6 +51,7 @@ function Login() {
           secureTextEntry={true}
           placeholder={'password'}
         />
+        <Text style={styles.errorText}>{error}</Text>
       </View>
       <Button title="LOGIN" onPress={handleLogin} />
     </SafeAreaView>
