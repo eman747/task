@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View, TextInput} from 'react-native';
 
 import palette from '../theme/palette';
+import {spacing} from '../theme/spacing';
 
 function Input(props) {
   return (
@@ -22,7 +23,7 @@ export default Input;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
+    marginTop: spacing.mini,
     alignItems: 'center',
   },
   textInput: {
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderWidth: 1,
     borderRadius: 6,
-    paddingHorizontal: 10,
+    paddingHorizontal: spacing.mini,
     color: palette.black,
     borderColor: palette.secondary,
     backgroundColor: palette.white,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, View, SafeAreaView} from 'react-native';
+import {Text, View, SafeAreaView} from 'react-native';
 
 import {useDispatch} from 'react-redux';
 import FastImage from 'react-native-fast-image';

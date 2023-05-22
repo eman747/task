@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import palette from '../../../theme/palette';
+import {spacing} from '../../../theme/spacing';
 
 export default styles = StyleSheet.create({
   container: {
@@ -7,6 +8,6 @@ export default styles = StyleSheet.create({
     backgroundColor: palette.primary,
   },
   body: {
-    padding: 10,
+    padding: spacing.mini,
   },
 });

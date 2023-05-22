@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 
 import {useDispatch} from 'react-redux';
+import Activity from '../../../components/Activity';
 import Button from '../../../components/Button';
 import Input from '../../../components/Input';
 import {fetchContent} from '../../../redux/authSlice';
@@ -12,6 +13,20 @@ function Login() {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  function handleLogin() {
+    setLoading(true);
+    dispatch(fetchContent({username, password}));
+  }
+
+  if (loading) {
+    return (
+      <View style={styles.loading}>
+        <Activity />
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -31,12 +46,7 @@ function Login() {
           placeholder={'password'}
         />
       </View>
-      <Button
-        title="LOGIN"
-        onPress={() => {
-          dispatch(fetchContent({username, password}));
-        }}
-      />
+      <Button title="LOGIN" onPress={handleLogin} />
     </SafeAreaView>
   );
 }

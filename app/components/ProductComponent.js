@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
@@ -50,8 +49,8 @@ const styles = StyleSheet.create({
     width: Dimensions.get('screen').width / 2.39,
     height: 200,
     borderRadius: 15,
-    padding: 10,
-    margin: 10,
+    padding: spacing.mini,
+    margin: spacing.mini,
     backgroundColor: palette.white,
   },
   image: {

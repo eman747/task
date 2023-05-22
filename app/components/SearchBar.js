@@ -3,6 +3,7 @@ import {StyleSheet, TextInput, View} from 'react-native';
 
 import palette from '../theme/palette';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {spacing} from '../theme/spacing';
 
 function Searchbar(props) {
   return (
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     width: '95%',
     borderRadius: 7,
     flexDirection: 'row',
-    paddingHorizontal: 10,
+    paddingHorizontal: spacing.mini,
     backgroundColor: palette.white,
   },
   textInput: {
